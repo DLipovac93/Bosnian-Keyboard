@@ -7,7 +7,10 @@ public class BKeyB {
     JFrame board;
     JPanel keyboard;
     JButton[] alphabetButtons = new JButton[28];
-    JButton A, B, C, Č, Ć, D, Đ, Dž, E, F, G, H, I, J;
+    JButton A, B, C, Č, Ć, D, Đ; 
+    JButton Dž, E, F, G, H, I, J;
+    JButton K, L, M, N, NJ, O, P;
+    JButton R, S, Š, T, U, V, Z, Ž;
 
     Font myFont = new Font("Times New Roman",Font.BOLD,60);
 
@@ -39,6 +42,21 @@ public class BKeyB {
         H = new JButton("H");
         I = new JButton("I");
         J = new JButton("J");
+        K = new JButton("L");
+        L = new JButton("L");
+        M = new JButton("M");
+        N = new JButton("N");
+        NJ = new JButton("NJ");
+        O = new JButton("O");
+        P = new JButton("P");
+        R = new JButton("R");
+        S = new JButton("S");
+        Š = new JButton("Š");
+        T = new JButton("T");
+        U = new JButton("U");
+        V = new JButton("V");
+        Z = new JButton("Z");
+        Ž = new JButton("Ž");
 
         alphabetButtons[0] = A;
         alphabetButtons[1] = B;
@@ -54,7 +72,21 @@ public class BKeyB {
         alphabetButtons[11] = H;
         alphabetButtons[12] = I;
         alphabetButtons[13] = J;
-
+        alphabetButtons[14] = K;
+        alphabetButtons[15] = L;
+        alphabetButtons[16] = M;
+        alphabetButtons[17] = N;
+        alphabetButtons[18] = NJ;
+        alphabetButtons[19] = O;
+        alphabetButtons[20] = P;
+        alphabetButtons[21] = R;
+        alphabetButtons[22] = S;
+        alphabetButtons[23] = Š;
+        alphabetButtons[24] = T;
+        alphabetButtons[25] = U;
+        alphabetButtons[26] = V;
+        alphabetButtons[27] = Z;
+        alphabetButtons[28] = Ž;
 
         keyboard.add(A);
         keyboard.add(B);
@@ -70,6 +102,23 @@ public class BKeyB {
         keyboard.add(H);
         keyboard.add(I);
         keyboard.add(J);
+        keyboard.add(K);
+        keyboard.add(L);
+        keyboard.add(M);
+        keyboard.add(N);
+        keyboard.add(NJ);
+        keyboard.add(O);
+        keyboard.add(P);
+        keyboard.add(R);
+        keyboard.add(S);
+        keyboard.add(Š);
+        keyboard.add(T);
+        keyboard.add(U);
+        keyboard.add(V);
+        keyboard.add(Z);
+        keyboard.add(Ž);
+
+
 
         board.add(keyboard);
 }
