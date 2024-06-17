@@ -2,11 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class BKeyB {
+public class BKeyB implements ActionListener {
 
     JFrame board;
     JPanel keyboard;
-    JButton[] alphabetButtons = new JButton[28];
+    JButton[] alphabetButtons = new JButton[30]; // Adjusted size to account for all buttons
     JButton A, B, C, Č, Ć, D, Đ; 
     JButton Dž, E, F, G, H, I, J;
     JButton K, L, M, N, NJ, O, P;
@@ -15,18 +15,11 @@ public class BKeyB {
     Font myFont = new Font("Times New Roman",Font.BOLD,60);
 
     BKeyB() {
-
-        board = new JFrame("Bosnian Alphbet");
+        board = new JFrame("Bosnian Alphabet");
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        board.setSize(1500, 750);
+        board.setSize(1100, 400);
         board.setLayout(null);
-        board.setResizable(true);
-        board.setVisible(true);
-
-        keyboard = new JPanel();
-        keyboard.setBounds(20,20,700, 650);
-        keyboard.setLayout(new GridLayout(4,7,10,10));
-        //keyboard.setBackground(Color.green);
+        board.setResizable(false);
 
         A = new JButton("A");
         B = new JButton("B");
@@ -42,7 +35,7 @@ public class BKeyB {
         H = new JButton("H");
         I = new JButton("I");
         J = new JButton("J");
-        K = new JButton("L");
+        K = new JButton("K");
         L = new JButton("L");
         M = new JButton("M");
         N = new JButton("N");
@@ -88,42 +81,24 @@ public class BKeyB {
         alphabetButtons[27] = Z;
         alphabetButtons[28] = Ž;
 
-        keyboard.add(A);
-        keyboard.add(B);
-        keyboard.add(C);
-        keyboard.add(Č);
-        keyboard.add(Ć);
-        keyboard.add(D);
-        keyboard.add(Đ);
-        keyboard.add(Dž);
-        keyboard.add(E);
-        keyboard.add(F);
-        keyboard.add(G);
-        keyboard.add(H);
-        keyboard.add(I);
-        keyboard.add(J);
-        keyboard.add(K);
-        keyboard.add(L);
-        keyboard.add(M);
-        keyboard.add(N);
-        keyboard.add(NJ);
-        keyboard.add(O);
-        keyboard.add(P);
-        keyboard.add(R);
-        keyboard.add(S);
-        keyboard.add(Š);
-        keyboard.add(T);
-        keyboard.add(U);
-        keyboard.add(V);
-        keyboard.add(Z);
-        keyboard.add(Ž);
+        for (int i = 0; i < 29; i++) {
+            alphabetButtons[i].addActionListener(this);
+            alphabetButtons[i].setFont(myFont);
+            alphabetButtons[i].setFocusable(true);
+            alphabetButtons[i].setBounds(10 + (i % 10) * 100, 10 + (i / 10) * 100, 120, 100);
+            board.add(alphabetButtons[i]);
+        }
 
+        board.setVisible(true);
+    }
 
+    public static void main(String[] args) {
+        new BKeyB();
+    }
 
-        board.add(keyboard);
-}
-public static void main(String[] args) {
-
-    new BKeyB();
-}
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        System.out.println("Button " + ((JButton) e.getSource()).getText() + " pressed.");
+    }
 }
