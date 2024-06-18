@@ -84,7 +84,7 @@ public class BKeyB implements ActionListener {
         for (int i = 0; i < 29; i++) {
             alphabetButtons[i].addActionListener(this);
             alphabetButtons[i].setFont(myFont);
-            alphabetButtons[i].setFocusable(true);
+            alphabetButtons[i].setFocusable(false);
             alphabetButtons[i].setBounds(10 + (i % 10) * 100, 10 + (i / 10) * 100, 120, 100);
             board.add(alphabetButtons[i]);
         }
@@ -98,7 +98,24 @@ public class BKeyB implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        System.out.println("Button " + ((JButton) e.getSource()).getText() + " pressed.");
+        if (e.getSource() == A) {
+            System.out.println("A Pressed");
+    }
+    if (e.getSource() == B) {
+        System.out.println("B Pressed");
+}
+if (e.getSource() == C) {
+    System.out.println("C Pressed");
+}
+if (e.getSource() == Č) {
+    System.out.println("Č Pressed");
+}
+if (e.getSource() == Ć) {
+    System.out.println("Ć Pressed");
+}
+if (e.getSource() == D) {
+    System.out.println("D Pressed");
+}
     }
 }
+
