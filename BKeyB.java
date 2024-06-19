@@ -108,14 +108,82 @@ if (e.getSource() == C) {
     System.out.println("C Pressed");
 }
 if (e.getSource() == Č) {
-    System.out.println("Č Pressed");
+    System.out.println("C v Pressed");
 }
 if (e.getSource() == Ć) {
-    System.out.println("Ć Pressed");
+    System.out.println("C' Pressed");
 }
 if (e.getSource() == D) {
     System.out.println("D Pressed");
 }
+if (e.getSource() == Đ) {
+    System.out.println("D- Pressed");
+}
+if (e.getSource() == Dž) {
+    System.out.println("Dz Pressed");
+}
+if (e.getSource() == E) {
+    System.out.println("E Pressed");
+}
+if (e.getSource() == F) {
+    System.out.println("F Pressed");
+}
+if (e.getSource() == G) {
+    System.out.println("G Pressed");
+}
+if (e.getSource() == H) {
+    System.out.println("H Pressed");
+}
+if (e.getSource() == I) {
+    System.out.println("I Pressed");
+}
+if (e.getSource() == J) {
+    System.out.println("J Pressed");
+}
+if (e.getSource() == K) {
+    System.out.println("K Pressed");
+}
+if (e.getSource() == L) {
+    System.out.println("L Pressed");
+}
+if (e.getSource() == M) {
+    System.out.println("M Pressed");
+}
+if (e.getSource() == N) {
+    System.out.println("N Pressed");
+}
+if (e.getSource() == NJ) {
+    System.out.println("NJ Pressed");
+}
+if (e.getSource() == O) {
+    System.out.println("O Pressed");
+}
+if (e.getSource() == P) {
+    System.out.println("P Pressed");
+}
+if (e.getSource() == R) {
+    System.out.println("R Pressed");
+}
+if (e.getSource() == S) {
+    System.out.println("S Pressed");
+}
+if (e.getSource() == Š) {
+    System.out.println("S v Pressed");
+}
+if (e.getSource() == T) {
+    System.out.println("T Pressed");
+}
+if (e.getSource() == U) {
+    System.out.println("U Pressed");
+}
+if (e.getSource() == V) {
+    System.out.println("V Pressed");
+}
+if (e.getSource() == Z) {
+    System.out.println("Z Pressed");
+}
+if (e.getSource() == Ž) {
+    System.out.println("Z v Pressed");
+}
     }
 }
-
