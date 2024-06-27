@@ -1,6 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 
 public class BKeyB implements ActionListener {
 
@@ -100,6 +107,7 @@ public class BKeyB implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == A) {
             System.out.println("A Pressed");
+            playSound("A_sound.wav");
     }
     if (e.getSource() == B) {
         System.out.println("B Pressed");
@@ -185,5 +193,20 @@ if (e.getSource() == Z) {
 if (e.getSource() == Ž) {
     System.out.println("Z v Pressed");
 }
+    }
+    public void playSound(String soundFile) {
+        try {
+            File soundPath = new File(soundFile);
+            if (soundPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(soundPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                System.out.println("Can't find file");
+            }
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
+            ex.printStackTrace();
+        }
     }
 }
