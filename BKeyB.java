@@ -111,9 +111,11 @@ public class BKeyB implements ActionListener {
     }
     if (e.getSource() == B) {
         System.out.println("B Pressed");
+        playSound("B_sound.wav");
 }
 if (e.getSource() == C) {
     System.out.println("C Pressed");
+    playSound("C_sound.wav");
 }
 if (e.getSource() == Č) {
     System.out.println("C v Pressed");
