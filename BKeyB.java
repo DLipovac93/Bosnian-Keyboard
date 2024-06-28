@@ -12,20 +12,28 @@ import java.io.IOException;
 public class BKeyB implements ActionListener {
 
     JFrame board;
+    JTextField textfield;
     JButton[] alphabetButtons = new JButton[30];
+    JButton[] functionButtons = new JButton[1];
     JButton A, B, C, Č, Ć, D, Đ; 
     JButton Dž, E, F, G, H, I, J;
     JButton K, L, M, N, NJ, O, P;
     JButton R, S, Š, T, U, V, Z, Ž;
+    JButton clr;
 
     Font myFont = new Font("Times New Roman",Font.BOLD,60);
 
     BKeyB() {
         board = new JFrame("Bosnian Alphabet");
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        board.setSize(1325, 400);
+        board.setSize(1325, 500);
         board.setLayout(null);
         board.setResizable(true);
+
+        textfield = new JTextField();
+        textfield.setBounds(10, 340, 500, 100);
+        textfield.setFont(myFont);
+        textfield.setEditable(false);
 
         A = new JButton("A");
         B = new JButton("B");
@@ -56,6 +64,7 @@ public class BKeyB implements ActionListener {
         V = new JButton("V");
         Z = new JButton("Z");
         Ž = new JButton("Ž");
+        clr = new JButton("clr");
 
         alphabetButtons[0] = A;
         alphabetButtons[1] = B;
@@ -86,6 +95,7 @@ public class BKeyB implements ActionListener {
         alphabetButtons[26] = V;
         alphabetButtons[27] = Z;
         alphabetButtons[28] = Ž;
+        functionButtons[0] = clr;
 
         for (int i = 0; i < 29; i++) {
             alphabetButtons[i].addActionListener(this);
@@ -95,6 +105,15 @@ public class BKeyB implements ActionListener {
             board.add(alphabetButtons[i]);
         }
 
+        for (int i = 0; i < functionButtons.length; i++) {
+            functionButtons[i].addActionListener(this);
+            functionButtons[i].setFont(myFont);
+            functionButtons[i].setFocusable(false);
+            functionButtons[i].setBounds(530, 340, 120, 100);
+            board.add(functionButtons[i]);
+        }
+
+        board.add(textfield);
         board.setVisible(true);
     }
 
@@ -106,10 +125,12 @@ public class BKeyB implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == A) {
             System.out.println("A Pressed");
+            textfield.setText(textfield.getText() + A.getText());
             playSound("A_sound.wav");
     }
     if (e.getSource() == B) {
         System.out.println("B Pressed");
+        textfield.setText(textfield.getText() + B.getText());
         playSound("B_sound.wav");
 }
 if (e.getSource() == C) {
@@ -205,6 +226,10 @@ if (e.getSource() == Z) {
 }
 if (e.getSource() == Ž) {
     System.out.println("Z v Pressed");
+}
+if (e.getSource() == clr) {
+    textfield.setText("");
+    System.out.println("Texted Cleared");
 }
     }
     public void playSound(String soundFile) {
