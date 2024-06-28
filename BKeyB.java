@@ -12,8 +12,7 @@ import java.io.IOException;
 public class BKeyB implements ActionListener {
 
     JFrame board;
-    JPanel keyboard;
-    JButton[] alphabetButtons = new JButton[30]; // Adjusted size to account for all buttons
+    JButton[] alphabetButtons = new JButton[30];
     JButton A, B, C, Č, Ć, D, Đ; 
     JButton Dž, E, F, G, H, I, J;
     JButton K, L, M, N, NJ, O, P;
@@ -24,9 +23,9 @@ public class BKeyB implements ActionListener {
     BKeyB() {
         board = new JFrame("Bosnian Alphabet");
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        board.setSize(1100, 400);
+        board.setSize(1325, 400);
         board.setLayout(null);
-        board.setResizable(false);
+        board.setResizable(true);
 
         A = new JButton("A");
         B = new JButton("B");
@@ -92,7 +91,7 @@ public class BKeyB implements ActionListener {
             alphabetButtons[i].addActionListener(this);
             alphabetButtons[i].setFont(myFont);
             alphabetButtons[i].setFocusable(false);
-            alphabetButtons[i].setBounds(10 + (i % 10) * 100, 10 + (i / 10) * 100, 120, 100);
+            alphabetButtons[i].setBounds(10 + (i % 10) * (120 + 10), 10 + (i / 10) * (100 + 10), 120, 100);
             board.add(alphabetButtons[i]);
         }
 
