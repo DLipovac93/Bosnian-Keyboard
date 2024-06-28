@@ -119,36 +119,47 @@ if (e.getSource() == C) {
 }
 if (e.getSource() == Č) {
     System.out.println("C v Pressed");
+    playSound("Č_sound.wav");
 }
 if (e.getSource() == Ć) {
     System.out.println("C' Pressed");
+    playSound("Ć_sound.wav");
 }
 if (e.getSource() == D) {
     System.out.println("D Pressed");
+    playSound("D_sound.wav");
 }
 if (e.getSource() == Đ) {
     System.out.println("D- Pressed");
+    playSound("Ð_sound.wav");
 }
 if (e.getSource() == Dž) {
     System.out.println("Dz Pressed");
+    playSound("Dž_sound.wav");
 }
 if (e.getSource() == E) {
     System.out.println("E Pressed");
+    playSound("E_sound.wav");
 }
 if (e.getSource() == F) {
     System.out.println("F Pressed");
+    playSound("F_sound.wav");
 }
 if (e.getSource() == G) {
     System.out.println("G Pressed");
+    playSound("G_sound.wav");
 }
 if (e.getSource() == H) {
     System.out.println("H Pressed");
+    playSound("H_sound.wav");
 }
 if (e.getSource() == I) {
     System.out.println("I Pressed");
+    playSound("I_sound.wav");
 }
 if (e.getSource() == J) {
     System.out.println("J Pressed");
+    playSound("J_sound.wav");
 }
 if (e.getSource() == K) {
     System.out.println("K Pressed");
@@ -191,6 +202,7 @@ if (e.getSource() == V) {
 }
 if (e.getSource() == Z) {
     System.out.println("Z Pressed");
+    playSound("Z_sound.wav");
 }
 if (e.getSource() == Ž) {
     System.out.println("Z v Pressed");
