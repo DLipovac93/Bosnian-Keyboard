@@ -14,12 +14,12 @@ public class BKeyB implements ActionListener {
     JFrame board;
     JTextField textfield;
     JButton[] alphabetButtons = new JButton[30];
-    JButton[] functionButtons = new JButton[1];
+    JButton[] functionButtons = new JButton[3];
     JButton A, B, C, Č, Ć, D, Đ; 
     JButton Dž, E, F, G, H, I, J;
     JButton K, L, M, N, NJ, O, P;
     JButton R, S, Š, T, U, V, Z, Ž;
-    JButton clr;
+    JButton clr, ply, spc;
 
     Font myFont = new Font("Times New Roman",Font.BOLD,60);
 
@@ -64,7 +64,9 @@ public class BKeyB implements ActionListener {
         V = new JButton("V");
         Z = new JButton("Z");
         Ž = new JButton("Ž");
-        clr = new JButton("clr");
+        clr = new JButton("clear");
+        ply = new JButton("play");
+        spc = new JButton("_");
 
         alphabetButtons[0] = A;
         alphabetButtons[1] = B;
@@ -96,6 +98,8 @@ public class BKeyB implements ActionListener {
         alphabetButtons[27] = Z;
         alphabetButtons[28] = Ž;
         functionButtons[0] = clr;
+        functionButtons[1] = ply;
+        functionButtons[2] = spc;
 
         for (int i = 0; i < 29; i++) {
             alphabetButtons[i].addActionListener(this);
@@ -105,13 +109,29 @@ public class BKeyB implements ActionListener {
             board.add(alphabetButtons[i]);
         }
 
-        for (int i = 0; i < functionButtons.length; i++) {
+        for (int i = 0; i < 2; i++) {
             functionButtons[i].addActionListener(this);
             functionButtons[i].setFont(myFont);
             functionButtons[i].setFocusable(false);
-            functionButtons[i].setBounds(530, 340, 120, 100);
-            board.add(functionButtons[i]);
         }
+
+        clr.setFont(myFont);
+        clr.setFocusable(false);
+        clr.setBounds(520, 340, 170, 100);
+        clr.addActionListener(this);
+        board.add(clr);
+
+        ply.setFont(myFont);
+        ply.setFocusable(false);
+        ply.setBounds(700, 340, 170, 100);
+        ply.addActionListener(this);
+        board.add(ply);
+
+        spc.setFont(myFont);
+        spc.setFocusable(false);
+        spc.setBounds(1180, 230, 120, 100);
+        spc.addActionListener(this);
+        board.add(spc);
 
         board.add(textfield);
         board.setVisible(true);
@@ -135,50 +155,62 @@ public class BKeyB implements ActionListener {
 }
 if (e.getSource() == C) {
     System.out.println("C Pressed");
+    textfield.setText(textfield.getText() + C.getText());
     playSound("C_sound.wav");
 }
 if (e.getSource() == Č) {
     System.out.println("C v Pressed");
+    textfield.setText(textfield.getText() + Č.getText());
     playSound("Č_sound.wav");
 }
 if (e.getSource() == Ć) {
     System.out.println("C' Pressed");
+    textfield.setText(textfield.getText() + Ć.getText());
     playSound("Ć_sound.wav");
 }
 if (e.getSource() == D) {
     System.out.println("D Pressed");
+    textfield.setText(textfield.getText() + D.getText());
     playSound("D_sound.wav");
 }
 if (e.getSource() == Đ) {
     System.out.println("D- Pressed");
+    textfield.setText(textfield.getText() + Đ.getText());
     playSound("Ð_sound.wav");
 }
 if (e.getSource() == Dž) {
     System.out.println("Dz Pressed");
+    textfield.setText(textfield.getText() + Dž.getText());
     playSound("Dž_sound.wav");
 }
 if (e.getSource() == E) {
     System.out.println("E Pressed");
+    textfield.setText(textfield.getText() + E.getText());
     playSound("E_sound.wav");
 }
 if (e.getSource() == F) {
     System.out.println("F Pressed");
+    textfield.setText(textfield.getText() + F.getText());
     playSound("F_sound.wav");
 }
 if (e.getSource() == G) {
     System.out.println("G Pressed");
+    textfield.setText(textfield.getText() + G.getText());
     playSound("G_sound.wav");
 }
 if (e.getSource() == H) {
     System.out.println("H Pressed");
+    textfield.setText(textfield.getText() + H.getText());
     playSound("H_sound.wav");
 }
 if (e.getSource() == I) {
     System.out.println("I Pressed");
+    textfield.setText(textfield.getText() + I.getText());
     playSound("I_sound.wav");
 }
 if (e.getSource() == J) {
     System.out.println("J Pressed");
+    textfield.setText(textfield.getText() + J.getText());
     playSound("J_sound.wav");
 }
 if (e.getSource() == K) {
@@ -227,10 +259,29 @@ if (e.getSource() == Z) {
 if (e.getSource() == Ž) {
     System.out.println("Z v Pressed");
 }
+if (e.getSource() == spc) {
+    textfield.setText(textfield.getText() + " ");
+}
 if (e.getSource() == clr) {
     textfield.setText("");
-    System.out.println("Texted Cleared");
+    System.out.println("Textfield Cleared");
 }
+if (e.getSource() == ply) {
+    System.out.println("Textfield Played");
+    playTextSounds();
+}
+
+    }
+    private void playTextSounds() {
+        String text = textfield.getText();
+        for (char ch : text.toCharArray()) {
+            playSound(ch + "_sound.wav");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
     public void playSound(String soundFile) {
         try {
