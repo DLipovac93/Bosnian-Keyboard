@@ -215,49 +215,79 @@ if (e.getSource() == J) {
 }
 if (e.getSource() == K) {
     System.out.println("K Pressed");
+    textfield.setText(textfield.getText() + K.getText());
+    playSound("K_sound.wav");
 }
 if (e.getSource() == L) {
     System.out.println("L Pressed");
+    textfield.setText(textfield.getText() + L.getText());
+    playSound("L_sound.wav");
 }
 if (e.getSource() == M) {
     System.out.println("M Pressed");
+    textfield.setText(textfield.getText() + M.getText());
+    playSound("M_sound.wav");
 }
 if (e.getSource() == N) {
     System.out.println("N Pressed");
+    textfield.setText(textfield.getText() + N.getText());
+    playSound("N_sound.wav");
 }
 if (e.getSource() == NJ) {
     System.out.println("NJ Pressed");
+    textfield.setText(textfield.getText() + NJ.getText());
+    playSound("NJ_sound.wav");
 }
 if (e.getSource() == O) {
     System.out.println("O Pressed");
+    textfield.setText(textfield.getText() + O.getText());
+    playSound("O_sound.wav");
 }
 if (e.getSource() == P) {
     System.out.println("P Pressed");
+    textfield.setText(textfield.getText() + P.getText());
+    playSound("P_sound.wav");
 }
 if (e.getSource() == R) {
     System.out.println("R Pressed");
+    textfield.setText(textfield.getText() + R.getText());
+    playSound("R_sound.wav");
 }
 if (e.getSource() == S) {
     System.out.println("S Pressed");
+    textfield.setText(textfield.getText() + S.getText());
+    playSound("S_sound.wav");
 }
 if (e.getSource() == Š) {
     System.out.println("S v Pressed");
+    textfield.setText(textfield.getText() + Š.getText());
+    playSound("Š_sound.wav");
 }
 if (e.getSource() == T) {
     System.out.println("T Pressed");
+    textfield.setText(textfield.getText() + T.getText());
+    playSound("T_sound.wav");
 }
 if (e.getSource() == U) {
     System.out.println("U Pressed");
+    textfield.setText(textfield.getText() + U.getText());
+    playSound("U_sound.wav");
 }
 if (e.getSource() == V) {
     System.out.println("V Pressed");
+    textfield.setText(textfield.getText() + V.getText());
+    playSound("V_sound.wav");
 }
 if (e.getSource() == Z) {
     System.out.println("Z Pressed");
     playSound("Z_sound.wav");
+    textfield.setText(textfield.getText() + Z.getText());
+    playSound("Z_sound.wav");
 }
 if (e.getSource() == Ž) {
     System.out.println("Z v Pressed");
+    textfield.setText(textfield.getText() + Ž.getText());
+    playSound("Ž_sound.wav");
 }
 if (e.getSource() == spc) {
     textfield.setText(textfield.getText() + " ");
