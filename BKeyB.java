@@ -1,4 +1,7 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
@@ -20,8 +23,8 @@ public class BKeyB implements ActionListener {
     JButton K, L, M, N, NJ, O, P;
     JButton R, S, Š, T, U, V, Z, Ž;
     JButton clr, ply, spc;
-
-    Font myFont = new Font("Times New Roman",Font.BOLD,60);
+    Border border = new LineBorder(Color.BLACK, 5);
+    Font myFont = new Font("Cosmic Sans",Font.BOLD,60);
 
     BKeyB() {
         board = new JFrame("Bosnian Alphabet");
@@ -31,9 +34,10 @@ public class BKeyB implements ActionListener {
         board.setResizable(true);
 
         textfield = new JTextField();
-        textfield.setBounds(10, 340, 500, 100);
+        textfield.setBounds(10, 340, 920, 100);
         textfield.setFont(myFont);
         textfield.setEditable(false);
+        textfield.setBorder(border);
 
         A = new JButton("A");
         B = new JButton("B");
@@ -106,24 +110,26 @@ public class BKeyB implements ActionListener {
             alphabetButtons[i].setFont(myFont);
             alphabetButtons[i].setFocusable(false);
             alphabetButtons[i].setBounds(10 + (i % 10) * (120 + 10), 10 + (i / 10) * (100 + 10), 120, 100);
+            alphabetButtons[i].setBorder(border);
             board.add(alphabetButtons[i]);
         }
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             functionButtons[i].addActionListener(this);
             functionButtons[i].setFont(myFont);
             functionButtons[i].setFocusable(false);
+            functionButtons[i].setBorder(border);
         }
 
         clr.setFont(myFont);
         clr.setFocusable(false);
-        clr.setBounds(520, 340, 170, 100);
+        clr.setBounds(940, 340, 180, 100);
         clr.addActionListener(this);
         board.add(clr);
 
         ply.setFont(myFont);
         ply.setFocusable(false);
-        ply.setBounds(700, 340, 170, 100);
+        ply.setBounds(1130, 340, 170, 100);
         ply.addActionListener(this);
         board.add(ply);
 
@@ -307,7 +313,7 @@ if (e.getSource() == ply) {
         for (char ch : text.toCharArray()) {
             playSound(ch + "_sound.wav");
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException ex) {
                 Thread.currentThread().interrupt();
             }
