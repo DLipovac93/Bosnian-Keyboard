@@ -182,12 +182,12 @@ if (e.getSource() == D) {
 if (e.getSource() == Đ) {
     System.out.println("D- Pressed");
     textfield.setText(textfield.getText() + Đ.getText());
-    playSound("Ð_sound.wav");
+    playSound("d-_sound.wav");
 }
 if (e.getSource() == Dž) {
     System.out.println("Dz Pressed");
     textfield.setText(textfield.getText() + Dž.getText());
-    playSound("Dž_sound.wav");
+    playSound("Dz_sound.wav");
 }
 if (e.getSource() == E) {
     System.out.println("E Pressed");
